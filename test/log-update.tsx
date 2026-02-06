@@ -434,8 +434,8 @@ test('standard rendering - sync() writes cursor suffix when cursor is dirty', t 
 	render.setCursorPosition({x: 5, y: 1});
 	render.sync('Line 1\nLine 2\nLine 3');
 
-	// sync() should write cursor suffix to position cursor
-	// 3 visible lines, cursor at y=1 → cursorUp(3-1) = cursorUp(2)
+	// Sync() should write cursor suffix to position cursor.
+	// 3 visible lines, cursor at y=1 → cursorUp(3-1) = cursorUp(2).
 	t.is((stdout.write as any).callCount, 1);
 	const written = (stdout.write as any).firstCall.args[0] as string;
 	t.is(
